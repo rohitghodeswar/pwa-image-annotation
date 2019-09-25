@@ -1,60 +1,56 @@
 import React, { Component } from "react";
 
-const styles = {
-  backgroundColor: "#ccc",
-  border: "5px solid #ddd",
-  margin: "10px",
-  padding: "10px"
-};
-
 export default class ImageApp extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      videoSrc: window.URL || window.webkitURL
-    };
+  
+  processDevices(devices) {
+    devices.forEach(device => {
+      console.log(device.label);
+      this.setDevice(device);
+    });
   }
-  componentDidMount() {
-    navigator.getUserMedia =
-      navigator.getUserMedia ||
-      navigator.webkitGetUserMedia ||
-      navigator.mozGetUserMedia ||
-      navigator.msGetUserMedia ||
-      navigator.oGetUserMedia;
 
-    if (navigator.getUserMedia) {
-      navigator.getUserMedia(
-        { video: true },
-        this.handleVideo,
-        this.videoError
-      );
-    }
+  async setDevice(device) {
+    const { deviceId } = device;
+    const stream = await navigator.mediaDevices.getUserMedia({
+      audio: false,
+      video: { deviceId }
+    });
+    this.videoPlayer.srcObject = stream;
+    this.videoPlayer.play();
   }
-  handleVideo(stream) {
-    // Update the state, triggering the component to re-render with the correct stream
-    this.setState({ videoSrc: window.URL.createObjectURL(stream) });
-    this.videoElement.play();
+
+  async componentDidMount() {
+    const cameras = await navigator.mediaDevices.enumerateDevices();
+    this.processDevices(cameras);
   }
-  videoError() {}
+
+  takePhoto = () => {
+    // const { sendFile } = this.props;
+    const context = this.canvas.getContext("2d");
+    context.drawImage(this.videoPlayer, 0, 0, 400, 300);
+    this.imageCaptured.src = this.canvas.toDataURL("image/png");
+    this.imageCaptured.style.display = "inline-block"
+    //this.canvas.toBlob(sendFile);
+  };
 
   render() {
-    const video = (
-      <video
-        id="video"
-        style={styles}
-        width="300"
-        height="280"
-        className="cameraFrame"
-        src={this.state.videoSrc}
-        autoPlay="true"
-        ref={input => {
-          this.videoElement = input;
-        }}
-      ></video>
-    );
     return (
       <>
-        <div>{video}</div>
+        <video ref={ref => (this.videoPlayer = ref)} width="400" heigh="300" />
+        <button onClick={this.takePhoto}>Take photo!</button>
+        <canvas
+          width="400"
+          height="300"
+          ref={ref => (this.canvas = ref)}
+          hidden
+        />
+        <img
+          ref={ref => (this.imageCaptured = ref)}
+          width="400"
+          heigh="300"
+          alt="captured photo"
+          style={{display: 'none'}}
+        />
       </>
     );
   }
