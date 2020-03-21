@@ -3,12 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "ecstatic": "^3.0.0",
     "http-server": "^0.11.1",
+    "jquery": "^3.2.1",
+    "js-beautify": "^1.6.14",
     "markerjs": "^1.2.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-highlight.js": "^1.0.7",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "3.1.2",
+    "react-syntax-highlight": "^15.3.1",
     "workbox-cli": "^4.3.1"
   },
   "scripts": {

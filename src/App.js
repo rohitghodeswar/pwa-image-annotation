@@ -1,29 +1,28 @@
-import React from 'react';
-// import image from './test-image-1.jpg';
-// import { MarkerArea } from 'markerjs';
-import './App.css';
-import ImageApp from './components/ImageApp';
+import "../node_modules/highlight.js/styles/tomorrow-night-eighties.css";
+import "./app.css";
+import React, { Component } from "react";
+import MobNavigation from "./components/MobNavigation";
+import NavigationSection from "./components/NavigationSection";
+import ContentSection from "./components/ContentSection";
+import RightInfoSection from "./components/RightInfoSection";
 
-class App extends React.Component {
-//   componentDidMount() {
-//     const m = new MarkerArea(document.getElementById('imageToAnnotate'));
-// m.open(
-//     (dataUrl) => {
-//         const res = document.getElementById("imageToAnnotate");
-//         res.src = dataUrl;
-//     }
-// );
-//   }
+class App extends Component {
   render() {
+    //let data = beautify(this.state.value, { indent_size: 2 });
     return (
-      <div className="App">
-        <header>
-          <h1>Image Annotation Example</h1>
-        </header>
-        <ImageApp />
-        <br></br>
-        
-          {/* <img src={image} id="imageToAnnotate" alt="marker test" height="300" width="344" style={{marginTop: '40px'}}></img> */}
+      <div className="container-fluid">
+        <div className="row">
+          <MobNavigation />
+          <div className="col-sm-4 col-md-3 col-lg-3 navigation-section">
+            <NavigationSection />
+          </div>
+          <div className="col-sm-6 col-md-7 col-lg-7 content-section mobile-content">
+            <ContentSection />
+          </div>
+          <div className="col-sm-2 col-md-2 col-lg-2 right-info-section">
+            <RightInfoSection />
+          </div>
+        </div>
       </div>
     );
   }

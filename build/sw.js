@@ -7,7 +7,7 @@ workbox.setConfig({modulePathPrefix: 'workbox-v4.3.1/'})
 const precacheManifest = [
   {
     "url": "asset-manifest.json",
-    "revision": "d3d3be152c949509c580ecf6ab27b03e"
+    "revision": "57da746d524b3020c38795b857c5c487"
   },
   {
     "url": "favicon.ico",
@@ -47,7 +47,7 @@ const precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "e9e19835c35105b4b653b2b9142776d3"
+    "revision": "7abcf1faf0bf0379a671abe2b844c70c"
   },
   {
     "url": "logo192.png",
@@ -59,11 +59,11 @@ const precacheManifest = [
   },
   {
     "url": "manifest.json",
-    "revision": "878f937f50850748058f8e134c123c18"
+    "revision": "f9f284d034b88afce9ea7f3d67360194"
   },
   {
-    "url": "precache-manifest.b95443c7c8c4c5e75235c51a84d92b78.js",
-    "revision": "b95443c7c8c4c5e75235c51a84d92b78"
+    "url": "precache-manifest.6e21929fd58abdfcf806cdaa45cbbabd.js",
+    "revision": "6e21929fd58abdfcf806cdaa45cbbabd"
   },
   {
     "url": "robots.txt",
@@ -71,23 +71,31 @@ const precacheManifest = [
   },
   {
     "url": "service-worker.js",
-    "revision": "fcdd5c258e97f8fa9732f92cfe0c390a"
+    "revision": "72065d18eea979cb0ca3fc84eb5d6459"
   },
   {
-    "url": "static/css/main.e10d6da1.chunk.css",
-    "revision": "ada14f31656c6b96675a3b42d55cdc39"
+    "url": "static/css/2.8f78e4b0.chunk.css",
+    "revision": "7ebf3efb46ffb935792586f1d1242d60"
   },
   {
-    "url": "static/js/2.25e785b4.chunk.js",
-    "revision": "e627c2fa4c7359c3c1de059c8d30ae51"
+    "url": "static/css/main.acd95411.chunk.css",
+    "revision": "4452ca363b03dce6be7e5c75a1d93876"
   },
   {
-    "url": "static/js/main.37e5c906.chunk.js",
-    "revision": "2ea3f57d70ea6157c57a263d3f06b746"
+    "url": "static/js/2.eb3893ef.chunk.js",
+    "revision": "11132ef3f17201b38cb73a9486b82c50"
+  },
+  {
+    "url": "static/js/main.f0c3bede.chunk.js",
+    "revision": "32a6f3e0236898a4a834dcd5e46600c2"
   },
   {
     "url": "static/js/runtime-main.f949f7e3.js",
     "revision": "af50ef3d9d6b48be6bfd5880bf2d0427"
+  },
+  {
+    "url": "static/media/glyphicons-halflings-regular.89889688.svg",
+    "revision": "89889688147bd7575d6327160d64e760"
   }
 ];
 
