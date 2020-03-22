@@ -24,9 +24,7 @@ export default class ImageApp extends Component {
   }
 
   componentDidUpdate() {
-    console.log('llll');
     const m = new MarkerArea(document.getElementById("imageToAnnotate"));
-    console.log('mmm', m);
     m.open(dataUrl => {
       const res = document.getElementById("imageToAnnotate");
       res.src = dataUrl;
