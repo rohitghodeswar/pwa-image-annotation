@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import beautify from "js-beautify";
 import $ from "jquery";
-import Highlight from 'react-highlight.js';
+import Highlight from "react-highlight.js";
 // import "../../node_modules/highlight.js/styles/tomorrow-night-eighties.css";
 import "../app.css";
 import { data } from "../json/content";
@@ -20,7 +20,6 @@ class QuesAnswer extends Component {
     const divStyle = {
       display: "none"
     };
-    console.log("content loaded ", this.props.match.params);
     const topic = this.props.match.params.topic;
     let questions = [],
       title = "";
@@ -32,7 +31,6 @@ class QuesAnswer extends Component {
         }
       });
     });
-    console.log("values ", questions);
     return (
       <div>
         <div className="topic-header text-center">{title}</div>

@@ -5,11 +5,6 @@ import { data } from "../json/content";
 import "../app.css";
 
 class NavigationSection extends Component {
-  
-  componentDidMount() {
-    console.log(data.es6);
-  }
-
   toggleMenu = e => {
     $(e.target).toggleClass("menu-box-open");
     $(e.target)
